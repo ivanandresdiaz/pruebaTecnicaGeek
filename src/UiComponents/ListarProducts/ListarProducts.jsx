@@ -10,6 +10,9 @@ const ListarProducts = (props) => {
   useEffect(() => {
     dispatch(getFirestoreProducts(gender));
   }, []);
+  const handleAñadirCarrito = (product) => {
+    console.log(product);
+  };
   console.log(products);
   return (
     <div>
@@ -18,6 +21,7 @@ const ListarProducts = (props) => {
           <h3>{product.title}</h3>
           <img src={product.image} alt={product.title} />
           <p>{product.price}</p>
+          <button type='button' onClick={() => handleAñadirCarrito(product)}>Añadir a Carrito</button>
         </div>
       ))}
     </div>
