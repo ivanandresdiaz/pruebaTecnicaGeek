@@ -9,6 +9,10 @@ import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 import Home from '../containers/Home/Home';
 import ProductsByCategory from '../containers/ProductsByCategory/ProductsByCategory';
+import Carrito from '../containers/Carrito/Carrito';
+import ProductDetails from '../containers/ProductDetails/ProductDetails';
+import PaymentInformation from '../containers/PaymentInformation/PaymentInformation';
+import MisTarjetas from '../containers/MisTarjetas/MisTarjetas';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -57,6 +61,30 @@ const App = () => {
             exact
             path='/category/:gender'
             component={ProductsByCategory}
+            isAuthenticated={isLoggedIn}
+          />
+          <PrivateRoute
+            exact
+            path='/carrito'
+            component={Carrito}
+            isAuthenticated={isLoggedIn}
+          />
+          <PrivateRoute
+            exact
+            path='/productDetails/:idProduct'
+            component={ProductDetails}
+            isAuthenticated={isLoggedIn}
+          />
+          <PrivateRoute
+            exact
+            path='/paymentInformation'
+            component={PaymentInformation}
+            isAuthenticated={isLoggedIn}
+          />
+          <PrivateRoute
+            exact
+            path='/tarjetas'
+            component={MisTarjetas}
             isAuthenticated={isLoggedIn}
           />
 

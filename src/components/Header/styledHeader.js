@@ -14,7 +14,7 @@ display: flex;
 justify-content:space-around;
 align-items:center;
 width: 100%;
-height: 60px;
+height: 70px;
 position: fixed;
 top: 0;
 left: 0;
@@ -49,4 +49,23 @@ height: 50px;
 width: 50px;
 border-radius: 50%;
 margin: 0 20px;
+`;
+export const DivIconCarrito = styled.div`
+position: relative;
+div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  height: 20px;
+  width: 20px;
+  background-color:red;
+  color: white;
+  border-radius: 50%;
+  span{
+    font-size: 10px;
+  }
+}
 `;

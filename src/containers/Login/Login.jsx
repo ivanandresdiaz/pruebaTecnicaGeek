@@ -30,7 +30,7 @@ const Login = (props) => {
     <DivContainerLogin>
       <ContainerLogin>
         <h1>Iniciar sesion</h1>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
           <label>
             Correo
             <input type='email' name='name' onChange={handleChange} />
@@ -40,7 +40,7 @@ const Login = (props) => {
             <input type='password' name='password' onChange={handleChange} />
           </label>
           <button type='submit'>Ingresar</button>
-        </form>
+        </form> */}
         <div onClick={handleLoginGoogle}>
           <FcGoogle size='4rem' />
           {' '}
@@ -52,10 +52,10 @@ const Login = (props) => {
           Ingresa con Google
         </div> */}
 
-        <Link to='/auth/register'>
+        {/* <Link to='/auth/register'>
           Registrate con Correo
           <FcInvite size='4rem' />
-        </Link>
+        </Link> */}
       </ContainerLogin>
     </DivContainerLogin>
 

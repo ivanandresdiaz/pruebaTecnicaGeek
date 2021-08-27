@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { DivBody, ImgHeroHome, DivContainerHero, DivGroupCategories, DivCategory } from './styledHome';
 
 const Home = (props) => {
+
   return (
     <div>
       <Header />
