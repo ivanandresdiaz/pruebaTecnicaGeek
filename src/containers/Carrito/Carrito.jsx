@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFirestoreCarrito } from '../../actions/productsActions';
+import { getFirestoreCarrito, deleteFirestoreProductCarrito } from '../../actions/productsActions';
 import { getCarrito } from '../../reducers/productsReducer';
 import { DivRowCarrito } from './styledCarrito';
 import Header from '../../components/Header/Header';
@@ -14,7 +14,9 @@ const Carrito = () => {
       dispatch(getFirestoreCarrito());
     }
   }, []);
-  console.log(carrito);
+  const handleDeleteProduct = (id) => {
+    dispatch(deleteFirestoreProductCarrito(id));
+  };
   return (
     <div>
       <Header />
@@ -29,6 +31,7 @@ const Carrito = () => {
           <img src={product.image} alt={product.title} />
           <h3>{product.title}</h3>
           <h3>{product.price}</h3>
+          <button type='button' onClick={() => handleDeleteProduct(product.id)}>Eliminar</button>
         </DivRowCarrito>
       ))}
       <p>

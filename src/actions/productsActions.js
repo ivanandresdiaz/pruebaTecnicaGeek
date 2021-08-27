@@ -82,3 +82,8 @@ export const getFirestoreCarrito = (gender) => (dispatch) => {
       toast.error('Algo salio mal');
     });
 };
+
+export const deleteFirestoreProductCarrito = (id) => async (dispatch) => {
+  await db.collection('carrito').doc(id).delete();
+  dispatch({ type: 'deleteFirestoreProductCarrito', payload: id });
+};

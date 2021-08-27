@@ -33,6 +33,12 @@ export const productsReducer = (state = initialState, action) => {
         ...state,
         tarjetas: action.payload,
       };
+    case 'deleteFirestoreProductCarrito': {
+      const nuevoCarrito = state.carrito.filter((item) => item.id !== action.payload);
+      return {
+        ...state,
+        carrito: nuevoCarrito,
+      }; }
     default:
       return state;
   }
